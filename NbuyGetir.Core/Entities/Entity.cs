@@ -9,7 +9,8 @@ namespace NbuyGetir.Core.Entities
 {
     public abstract class Entity : IEntity
     {
-        //...
+        public string Id { get; private set; }
+        
         private List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
         public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents;
 
@@ -18,6 +19,12 @@ namespace NbuyGetir.Core.Entities
         {
             _domainEvents.Add(@event);
         }
+
+        public Entity()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+
     }
     
     

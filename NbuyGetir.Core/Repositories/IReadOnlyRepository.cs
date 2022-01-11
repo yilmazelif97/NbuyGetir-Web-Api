@@ -15,5 +15,7 @@ namespace NbuyGetir.Core.Repositories
         IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> lamda);
         IQueryable<TEntity> List(); //order, include, take, skip gibi işlemler için IQueryable yaptık. 
 
+        IQueryable<TEntity> Select(string query); // select * from products join gibi sorugular eklenebilecek. q
+
     }
 }
