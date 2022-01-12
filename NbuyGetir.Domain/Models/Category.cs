@@ -47,7 +47,8 @@ namespace NbuyGetir.Domain.Models
 
 
             //Dışarıdan üst seviye olan kategori başka kategorinin alt kategorisi olamaz 
-            if (category.isTopLevel)
+
+            if (category.isTopLevel) //eklenecek olan kategori 
             {
                 throw new Exception("Top kategoriye başka bir top kategori eklenemez");
             }
